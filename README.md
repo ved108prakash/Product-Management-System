@@ -7,7 +7,7 @@ This is a fully authenticated Django project with CRUD (Create, Read, Update, De
 
 User authentication (Login, Logout, Register)
 
-CRUD operations (Add, Update, Delete)
+CRUD operations (Add, Update, Delete,Filter,Display)
 
 Secure and scalable backend
 
