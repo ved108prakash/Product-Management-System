@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        /* Background color for the page */
+        body {
+            background-color: #edf0ce;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Form container styling */
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        /* Form input styling */
+        .form-container input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Button styling */
+        .form-container button {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-container button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h3 style="color: blue;">Update Data Of {{p.pname}} </h3>
+        <form action="/update/{{p.pid}}/" method="post"> 
+
+            {% csrf_token %}
+            <!-- <label for="jn">JN</label> -->
+            <input type="number" name="id"  value="{{p.pid}}" disabled>
+
+            <!-- <label for="pname">Player Name</label> -->
+            <input type="text" name="pname" value="{{p.pname}}" >
+
+            <!-- <label for="runs">Runs</label> -->
+            <input type="number" name="pp" value="{{p.price}}">
+
+            <!-- <label for="wickets">Wickets</label> -->
+            <input type="number" name="qty" value="{{p.quantity}}">
+
+            <!-- <label for="team">Team</label> -->
+            <input type="text" name="cat" value="{{p.category}}">
+
+            <button type="submit">Update</button>
+        </form> <br> <br>
+        
+        <a href="/logout/" class="btn btn-danger">Logout</a>
+    </div>
+
+</body>
+</html>
